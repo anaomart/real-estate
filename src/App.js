@@ -14,7 +14,7 @@ function App() {
       <div>
         <div
           className="
-        absolute z-50 h-80 w-80 rounded-full bg-[rgba(255,255,255,0.522)] blur-[100px]
+        pointer-events-none absolute z-30 h-80 w-80 rounded-full bg-[rgba(255,255,255,0.522)] blur-[100px]
       "
         />
 

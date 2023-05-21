@@ -17,7 +17,7 @@ export default function Navbar() {
     end: { x: 50, transition: { duration: 0.1, delay: 1 } },
   };
   return (
-    <div className=" wrapper   top-0  z-50 flex items-center justify-between text-white  md:justify-evenly lg:justify-between">
+    <div className=" wrapper   top-0  z-20 flex items-center justify-between text-white  md:justify-evenly lg:justify-between">
       <div className=" w-28 items-start text-3xl font-bold tracking-widest ">
         Pixld
       </div>
@@ -26,7 +26,7 @@ export default function Navbar() {
         variants={variants}
         // animate="end"
         // initial="start"
-        className={` absolute right-8 top-10 z-[1000] mx-10 flex flex-col
+        className={` absolute right-8 top-10  mx-10 flex flex-col
             items-center gap-8 rounded-2xl bg-white p-12 text-center  text-gray-400
            transition-all  duration-500 md:relative md:right-0 md:top-0
                         md:flex md:flex-row md:bg-transparent md:p-0 md:text-secondary ${
@@ -35,7 +35,7 @@ export default function Navbar() {
       >
         {NavLinks.map((nav) => (
           <a
-            className="z-[999] hover:cursor-pointer hover:text-black md:hover:text-white"
+            className="z-[1000] hover:cursor-pointer hover:text-black md:hover:text-white"
             href={nav.path}
             key={nav.title + Math.random()}
           >
