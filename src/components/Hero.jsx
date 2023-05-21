@@ -31,13 +31,13 @@ export default function Hero() {
           <HiLocationMarker className="text-blue" size={25} />
           <input
             type="text"
-            className=" w-44 border-none p-2  text-base outline-none md:w-auto"
+            className=" w-44 border-none p-2 text-base  outline-none  sm:w-[100%]"
           />
           <button className="button">Search</button>
         </div>
         {/* Counter */}
-        <div className="flex items-center justify-between gap-12 ">
-          <div className="flex flex-col items-center justify-center">
+        <div className="flex items-center justify-between gap-4 md:gap-12  ">
+          <div className="flex flex-col  items-center justify-center">
             <span className="flex w-fit gap-1 text-3xl leading-relaxed">
               <CountUp start={8800} end={9000} duration={4} />
               <span className="text-orange-400">+</span>

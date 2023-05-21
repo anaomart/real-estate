@@ -35,7 +35,7 @@ export default function Navbar() {
       >
         {NavLinks.map((nav) => (
           <a
-            className="hover:cursor-pointer hover:text-black md:hover:text-white"
+            className="z-[1000] hover:cursor-pointer hover:text-black md:hover:text-white"
             href={nav.path}
             key={nav.title + Math.random()}
           >
