@@ -43,7 +43,7 @@ export default function Property({
             className="h-[260px] w-[350px] object-cover md:w-[400px]"
           />
         </Box>
-        <Box w="full">
+        <Box w="full " marginLeft={"1.5"}>
           <Flex
             paddingTop="2"
             alignItems="center"

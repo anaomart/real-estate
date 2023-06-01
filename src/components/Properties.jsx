@@ -78,7 +78,7 @@ export default function Properties() {
         linkName="/search/purpose=for-rent"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
-      <Flex flexWrap={"wrap"} justifyContent={"center"}>
+      <Flex flexWrap={"wrap"} justifyContent={"center"} className=" ml-4 ">
         {propertiesForRent?.map((property) => (
           <Property key={property.id} property={property} />
         ))}
