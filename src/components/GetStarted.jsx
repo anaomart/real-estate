@@ -15,7 +15,7 @@ export default function GetStarted() {
           residence soon
         </p>
         <button
-          className=" m-auto rounded-lg border border-2 border-white bg-[#5a73d7] px-4
+          className=" m-auto rounded-lg  border-2 border-white bg-[#5a73d7] px-4
          py-2 text-white hover:scale-105 hover:border-black hover:bg-white hover:text-blue"
         >
           Get Started

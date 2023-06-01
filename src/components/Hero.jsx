@@ -31,7 +31,7 @@ export default function Hero() {
           <HiLocationMarker className="text-blue" size={25} />
           <input
             type="text"
-            className=" w-44 border-none p-2 text-base  outline-none  sm:w-[100%]"
+            className=" w-44 border-none p-2 text-base  outline-none  sm:w-[100%] lg:px-8"
           />
           <button className="button">Search</button>
         </div>

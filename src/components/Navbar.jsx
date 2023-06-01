@@ -2,9 +2,11 @@ import React from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
-export default function Navbar() {
+import { Link } from "react-router-dom";
+export default function Navbar({ white }) {
   const [openNav, setOpenNav] = React.useState(false);
   const NavLinks = [
+    { title: "Properties", path: "/properties" },
     { title: "Residencies", path: "#residencies" },
     { title: "Our Value", path: "#ourValue" },
     { title: "Contact Us", path: "#contactUs" },
@@ -17,9 +19,17 @@ export default function Navbar() {
     end: { x: 50, transition: { duration: 0.1, delay: 1 } },
   };
   return (
-    <div className=" wrapper   top-0  z-20 flex items-center justify-between text-white  md:justify-evenly lg:justify-between">
-      <div className=" w-28 items-start text-3xl font-bold tracking-widest ">
-        Pixld
+    <div
+      className={`  wrapper first-letter:hover relative top-0  z-20  flex items-center  justify-between   text-black md:justify-evenly lg:justify-between
+    ${white ? "bg-white" : "bg-black"}
+    `}
+    >
+      <div
+        className={` w-28 items-start text-3xl font-bold tracking-widest ${
+          white ? "text-black" : "text-white"
+        } `}
+      >
+        <Link to={"/"}>Pixld</Link>
       </div>
       {/* Links by loop */}
       <motion.div
@@ -33,17 +43,35 @@ export default function Navbar() {
                           openNav ? "flex" : "hidden"
                         }`}
       >
-        {NavLinks.map((nav) => (
-          <a
-            className="z-[1000] hover:cursor-pointer hover:text-black md:hover:text-white"
-            href={nav.path}
-            key={nav.title + Math.random()}
-          >
-            {nav.title}
-          </a>
-        ))}
+        {NavLinks.map((nav) =>
+          nav.path.startsWith("/") ? (
+            <Link
+              className={`z-[1000]  hover:cursor-pointer hover:text-black md:hover:text-white 
+            ${
+              white ? "md:text-black md:hover:text-gray-600 " : "md:text-white"
+            }`}
+              to={nav.path}
+              key={nav.title + Math.random()}
+            >
+              {nav.title}
+            </Link>
+          ) : (
+            <a
+              className={`z-[1000]  hover:cursor-pointer hover:text-black md:hover:text-white 
+              ${
+                white
+                  ? "md:text-black md:hover:text-gray-600 "
+                  : "md:text-white"
+              }`}
+              href={nav.path}
+              key={nav.title + Math.random()}
+            >
+              {nav.title}
+            </a>
+          )
+        )}
         <button className="button ">
-          <a href="/">Contact</a>
+          <Link to="/">Contact</Link>
         </button>
       </motion.div>
       {/* Menu Button */}
@@ -52,9 +80,15 @@ export default function Navbar() {
         onClick={() => setOpenNav((prev) => !prev)}
       >
         {openNav ? (
-          <AiOutlineCloseCircle size={28} />
+          <AiOutlineCloseCircle
+            size={28}
+            className={`${white ? "text-black " : "text-white"}`}
+          />
         ) : (
-          <BiMenuAltRight size={28} />
+          <BiMenuAltRight
+            size={28}
+            className={`${white ? "text-black " : "text-white"}`}
+          />
         )}
       </div>
     </div>
