@@ -24,22 +24,22 @@ export default function SearchFilters({ query }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationData, setLocationData] = useState();
   const [showLocations, setShowLocations] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const filtersParams = {};
 
   const searchProperties = (filterValues) => {
-    console.log(query, filterValues);
-
+    // console.log(query, filterValues);
     const param = Object.keys(filterValues)[0];
-    console.log(filterValues[param]);
+    // console.log(filterValues[param]);
     query[param] = filterValues[param];
-    console.log(query);
+    // console.log(query);
 
     let temp = [];
     Object.entries(query).forEach(function ([key, value]) {
       temp.push(`${key}=${value}`);
     });
-    console.log(temp);
+    // console.log(temp);
 
     navigate(`/search/${temp.join("&")}`);
   };

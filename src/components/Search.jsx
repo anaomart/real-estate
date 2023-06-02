@@ -6,9 +6,12 @@ import SearchFilters from "./SearchFilters";
 import Property from "./Property";
 import noResult from "../assets/noresult.svg";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
+import LoadingSpinner from "./LoadingSpinner";
 export default function Search() {
   const [searchFilters, setSearchFilters] = useState(false);
   const [properties, setProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   let { query } = useParams();
   let temp = {};
   console.log(query);
@@ -20,6 +23,7 @@ export default function Search() {
   console.log(temp);
   query = temp;
   useEffect(() => {
+    setIsLoading(true);
     const getProperties = async () => {
       const purpose = query.purpose || "for-rent";
       const rentFrequency = query.rentFrequency || "yearly";
@@ -36,6 +40,7 @@ export default function Search() {
       );
 
       setProperties(properties?.hits);
+      setIsLoading(false);
     };
     getProperties();
   }, [
@@ -73,11 +78,17 @@ export default function Search() {
         Properties {query.purpose}
       </Text>
       <Flex flexWrap={"wrap"} m="auto" justifyContent={"center"}>
-        {properties?.map((property) => (
-          <Property property={property} key={property.id} />
-        ))}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <>
+            {properties?.map((property) => (
+              <Property property={property} key={property.id} />
+            ))}
+          </>
+        )}
       </Flex>
-      {properties?.length == 0 && (
+      {properties?.length == 0 && !isLoading && (
         <Flex
           justifyContent="center"
           alignItems="center"

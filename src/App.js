@@ -9,7 +9,18 @@ import GetStarted from "./components/GetStarted";
 import Footer from "./components/Footer";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "./components/Layout";
+import { useEffect } from "react";
+import nProgress from "nprogress";
 function App() {
+  nProgress.configure({ showSpinner: false });
+
+  useEffect(() => {
+    nProgress.start();
+
+    return () => {
+      nProgress.done();
+    };
+  }, []);
   return (
     <>
       <div className="App  ">

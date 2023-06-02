@@ -3,6 +3,9 @@ import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "./Property";
+import nProgress from "nprogress";
+import ClipLoader from "react-spinners/ClipLoader";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Banner = ({
   purpose,
@@ -47,10 +50,13 @@ const Banner = ({
 );
 
 export default function Properties() {
+  const [isLoading, setIsLoading] = useState(true);
   const [propertiesForRent, setPropertiesForRent] = useState([]);
   const [propertiesForSale, setPropertiesForSale] = useState([]);
+
   useEffect(() => {
     const getProperties = async () => {
+      setIsLoading(true);
       const propertyForSale = await fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
       );
@@ -61,6 +67,7 @@ export default function Properties() {
 
       setPropertiesForSale(propertyForSale?.hits);
       setPropertiesForRent(propertyForRent?.hits);
+      setIsLoading(false);
     };
     getProperties();
   }, []);
@@ -79,9 +86,15 @@ export default function Properties() {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
       <Flex flexWrap={"wrap"} justifyContent={"center"} className=" ml-4 ">
-        {propertiesForRent?.map((property) => (
-          <Property key={property.id} property={property} />
-        ))}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <>
+            {propertiesForRent?.map((property) => (
+              <Property key={property.id} property={property} />
+            ))}
+          </>
+        )}
       </Flex>
       <Banner
         purpose="BUY A HOME"
@@ -94,9 +107,13 @@ export default function Properties() {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       <Flex flexWrap={"wrap"} justifyContent={"center"}>
-        {propertiesForSale?.map((property) => (
-          <Property key={property.id} property={property} />
-        ))}
+        {propertiesForSale ? (
+          propertiesForSale?.map((property) => (
+            <Property key={property.id} property={property} />
+          ))
+        ) : (
+          <LoadingSpinner />
+        )}
       </Flex>
     </Box>
   );

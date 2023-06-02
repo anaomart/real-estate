@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./App.css";
@@ -9,8 +9,11 @@ import Properties from "./components/Properties";
 import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "./components/Footer";
 import Search from "./components/Search";
+import PropertyDetails from "./components/PropertyDetails";
+import nProgress from "nprogress";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <ChakraProvider>
@@ -22,6 +25,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/properties" element={<Properties />} />
+          <Route path="/property/:id" element={<PropertyDetails />} />
           <Route path="/search/:query" element={<Search />} />
         </Routes>
         <Footer />
