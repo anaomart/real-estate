@@ -9,7 +9,7 @@ export default function ContactUsForm({ open }) {
   const Form = () => (
     <div className={`${openModel ? "m-0 " : " m-[100%]"}  transition-all`}>
       <main className=" fixed  top-0 z-[60] flex overflow-hidden bg-white transition-all ">
-        <div className="lg:overflow  flex-1 py-12 lg:flex lg:h-screen lg:justify-center">
+        <div className="lg:overflow  flex-1 py-10 md:py-12 lg:flex lg:h-screen lg:justify-center">
           <div className="mx-auto max-w-lg flex-1 px-4 text-gray-600">
             <div>
               <div className="flex justify-between">
@@ -31,7 +31,7 @@ export default function ContactUsForm({ open }) {
             </div>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-12 space-y-5 lg:pb-12"
+              className="space-y-5 md:mt-12 lg:pb-12"
             >
               <div>
                 <label className="font-medium">Full name</label>

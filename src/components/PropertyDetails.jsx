@@ -40,7 +40,7 @@ export default function PropertyDetails() {
         </div>
       ) : (
         <Box maxWidth="1200px" margin="auto" p="4">
-          <div className=" my-4 flex w-full justify-end">
+          <div className=" my-4 flex w-full justify-center md:justify-end">
             <Button
               onClick={() => {
                 setModel(!model);

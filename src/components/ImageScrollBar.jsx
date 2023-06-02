@@ -40,7 +40,7 @@ export default function ImageScrollBar({ data }) {
                 <img
                   src={item.url}
                   alt={"property slide"}
-                  className="h-[500px] w-full object-cover"
+                  className="h-[500px] w-full object-contain md:object-cover"
                 />
               </SwiperSlide>
             ))}
