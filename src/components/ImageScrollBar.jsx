@@ -23,7 +23,7 @@ export default function ImageScrollBar({ data }) {
   };
 
   return (
-    <div className="relative m-auto  ">
+    <div className=" relative m-auto  ">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         navigation
@@ -33,15 +33,19 @@ export default function ImageScrollBar({ data }) {
         slidesPerView={1}
         ref={sliderRef}
       >
-        {data.map((item) => (
-          <SwiperSlide>
-            <img
-              src={item.url}
-              alt={"property slide"}
-              className="h-[500px] w-full object-contain"
-            />
-          </SwiperSlide>
-        ))}
+        {
+          <div>
+            {data.map((item) => (
+              <SwiperSlide>
+                <img
+                  src={item.url}
+                  alt={"property slide"}
+                  className="h-[500px] w-full object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </div>
+        }
       </Swiper>
       <div className="absolute top-1/2 z-50 my-auto flex h-0 w-full -translate-y-1/2 items-center justify-between bg-red-500 ">
         <button onClick={handleSlidePrev}>

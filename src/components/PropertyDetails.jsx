@@ -10,9 +10,12 @@ import { useParams } from "react-router-dom";
 import ImageScrollbar from "./ImageScrollBar";
 import nProgress from "nprogress";
 import LoadingSpinner from "./LoadingSpinner";
+import { Button } from "@chakra-ui/react";
+import ContactUsForm from "./ContactUsForm";
 export default function PropertyDetails() {
   const [propertyDetails, setPropertyDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [model, setModel] = useState(false);
 
   const { id } = useParams();
   useEffect(() => {
@@ -36,10 +39,24 @@ export default function PropertyDetails() {
           <LoadingSpinner />
         </div>
       ) : (
-        <Box maxWidth="1000px" margin="auto" p="4">
+        <Box maxWidth="1200px" margin="auto" p="4">
+          <div className=" my-4 flex w-full justify-end">
+            <Button
+              onClick={() => {
+                setModel(!model);
+              }}
+              bg="blue.500"
+              color="white"
+              _hover={{ bg: "green.200" }}
+            >
+              Book a Meeting
+            </Button>
+          </div>
           {propertyDetails?.photos && (
-            <div className="m-auto h-[10%] w-[100%] md:w-[80%]">
-              <ImageScrollbar data={propertyDetails?.photos} />
+            <div className="m-auto   w-[100%] md:w-[100%]">
+              <div>
+                <ImageScrollbar data={propertyDetails?.photos} />
+              </div>
             </div>
           )}
 
@@ -146,6 +163,7 @@ export default function PropertyDetails() {
           </Box>
         </Box>
       )}
+      {model && <ContactUsForm open={true} />}
     </>
   );
 }
