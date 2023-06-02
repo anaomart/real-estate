@@ -38,7 +38,7 @@ export default function PropertyDetails() {
       ) : (
         <Box maxWidth="1000px" margin="auto" p="4">
           {propertyDetails?.photos && (
-            <div className="m-auto h-[10%] w-[80%]">
+            <div className="m-auto h-[10%] w-[100%] md:w-[80%]">
               <ImageScrollbar data={propertyDetails?.photos} />
             </div>
           )}

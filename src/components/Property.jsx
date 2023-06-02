@@ -30,17 +30,17 @@ export default function Property({
     <Link to={`/property/${externalID}`}>
       <Flex
         flexWrap={"wrap"}
-        w="400px"
         p="5"
         paddingTop={"0"}
         cursor={"pointer"}
         justifyContent={"center"}
+        className="w-[350px] md:w-[400px]"
       >
         <Box>
           <img
             src={coverPhoto.url}
             alt={"house"}
-            className="h-[260px] w-[350px] object-cover md:w-[400px]"
+            className="h-[260px]  object-cover md:w-[400px]"
           />
         </Box>
         <Box w="full " marginLeft={"1.5"}>
