@@ -8,7 +8,6 @@ import millify from "millify";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import { useParams } from "react-router-dom";
 import ImageScrollbar from "./ImageScrollBar";
-import nProgress from "nprogress";
 import LoadingSpinner from "./LoadingSpinner";
 import { Button } from "@chakra-ui/react";
 import ContactUsForm from "./ContactUsForm";

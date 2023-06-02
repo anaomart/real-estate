@@ -38,7 +38,7 @@ export default function Property({
       >
         <Box>
           <img
-            src={coverPhoto.url}
+            src={coverPhoto?.url}
             alt={"house"}
             className="h-[260px]  object-cover md:w-[400px]"
           />
@@ -59,7 +59,7 @@ export default function Property({
               </Text>
             </Flex>
             <Box>
-              <Avatar size="sm" src={agency.logo.url} />
+              <Avatar size="sm" src={agency?.logo?.url} />
             </Box>
           </Flex>
           <Flex
@@ -73,7 +73,7 @@ export default function Property({
             <BsGridFill /> |
           </Flex>
           <Text>
-            {title.length > 30 ? `${title.substring(0, 30)} ... ` : title}
+            {title?.length > 30 ? `${title.substring(0, 30)} ... ` : title}
           </Text>
         </Box>
       </Flex>

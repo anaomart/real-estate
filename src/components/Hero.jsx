@@ -2,6 +2,7 @@ import React from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import SearchInput from "./SearchInput";
 export default function Hero() {
   return (
     <div className="wrapper relative flex flex-col  items-center  justify-around gap-5 text-white  md:flex-row lg:h-[91vh] ">
@@ -29,9 +30,11 @@ export default function Hero() {
         {/* Search */}
         <div className="flex  items-center justify-between rounded-md border bg-white px-4 py-2 text-black">
           <HiLocationMarker className="text-blue" size={25} />
-          <input
+          <SearchInput
             type="text"
-            className=" w-44 border-none p-2 text-base  outline-none  sm:w-[100%] lg:px-8"
+            className={
+              " w-44 border-none p-2 text-base  outline-none  sm:w-[100%] lg:px-8"
+            }
           />
           <button className="button">Search</button>
         </div>

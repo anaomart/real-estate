@@ -3,9 +3,9 @@ import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "./Property";
-import nProgress from "nprogress";
 import ClipLoader from "react-spinners/ClipLoader";
 import LoadingSpinner from "./LoadingSpinner";
+import SearchInput from "./SearchInput";
 
 const Banner = ({
   purpose,
@@ -75,6 +75,10 @@ export default function Properties() {
   console.log(propertiesForRent);
   return (
     <Box className="">
+      <div className="flex w-full  justify-center">
+        <SearchInput className="  m-auto my-2 rounded-full border-blue  px-20 py-3 text-center outline-dashed" />
+      </div>
+
       <Banner
         purpose="RENT A HOME"
         title1="Rental Homes for"

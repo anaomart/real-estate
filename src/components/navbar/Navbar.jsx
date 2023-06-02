@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import ContactUsForm from "../ContactUsForm";
 export default function Navbar({ white }) {
   const [openNav, setOpenNav] = React.useState(false);
-  const NavLinks = [
-    { title: "Properties", path: "/properties" },
-    { title: "Residencies", path: "#residencies" },
-    { title: "Our Value", path: "#ourValue" },
-    { title: "Contact Us", path: "#contactUs" },
-    { title: "Get Started", path: "#getStarted" },
-  ];
+  const [model, setModel] = useState(false);
+
+  const NavLinks = !white
+    ? [
+        { title: "Properties", path: "/properties" },
+        { title: "Residencies", path: "#residencies" },
+        { title: "Our Value", path: "#ourValue" },
+        { title: "Contact Us", path: "#contactUs" },
+        { title: "Get Started", path: "#getStarted" },
+      ]
+    : [
+        { title: "Home", path: "/" },
+        { title: "Properties", path: "/properties" },
+        { title: "Rent", path: "/search/purpose=for-rent" },
+        { title: "Sale", path: "/search/purpose=for-sale" },
+      ];
   const variants = {
     start: {
       x: -1000,
@@ -70,8 +80,8 @@ export default function Navbar({ white }) {
             </a>
           )
         )}
-        <button className="button ">
-          <Link to="/">Contact</Link>
+        <button className="button " onClick={() => setModel(!model)}>
+          Contact
         </button>
       </motion.div>
       {/* Menu Button */}
@@ -91,6 +101,7 @@ export default function Navbar({ white }) {
           />
         )}
       </div>
+      {model && <ContactUsForm open={true} />}
     </div>
   );
 }

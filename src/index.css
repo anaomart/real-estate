@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+
+html {
+  height: min-content;
 }
 * {
   padding: 0;

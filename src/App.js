@@ -1,5 +1,4 @@
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
 import "./App.css";
 import Brand from "./components/Brand";
 import Residencies from "./components/Residencies";
@@ -10,17 +9,7 @@ import Footer from "./components/Footer";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "./components/Layout";
 import { useEffect } from "react";
-import nProgress from "nprogress";
 function App() {
-  nProgress.configure({ showSpinner: false });
-
-  useEffect(() => {
-    nProgress.start();
-
-    return () => {
-      nProgress.done();
-    };
-  }, []);
   return (
     <>
       <div className="App  ">

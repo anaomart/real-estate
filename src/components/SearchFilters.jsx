@@ -19,12 +19,7 @@ export default function SearchFilters({ query }) {
   const searchParams = new URLSearchParams(location.search);
   console.log(location);
   const navigate = useNavigate();
-  const [filtersParamsState, setFiltersParamsState] = useState([]);
   const [filters, setFilters] = useState(filterData);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [locationData, setLocationData] = useState();
-  const [showLocations, setShowLocations] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const filtersParams = {};
 
