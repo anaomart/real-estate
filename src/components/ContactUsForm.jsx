@@ -7,7 +7,7 @@ export default function ContactUsForm({ open }) {
   console.log(openModel);
 
   const Form = () => (
-    <div className={`${openModel ? "m-0 " : " ml-[100%]"}  transition-all`}>
+    <div className={`${openModel ? "scale-100 " : " scale-0"}  transition-all`}>
       <main className=" fixed  top-0 z-[60] flex overflow-hidden bg-white transition-all ">
         <div className="lg:overflow  flex-1 py-10 md:py-12 lg:flex lg:h-screen lg:justify-center">
           <div className="mx-auto max-w-lg flex-1 px-4 text-gray-600">

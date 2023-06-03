@@ -1,7 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import data from "../assets/slider.json";
+import { Link } from "react-router-dom";
 export default function Residencies() {
+  const path = [6192422, 7416414, 7319302, 7405100];
   return (
     <section id="residencies" className="wrapper">
       <div className="w-ful px-8">
@@ -17,7 +19,8 @@ export default function Residencies() {
         </div>
         <div className="grid grid-cols-1 gap-4 text-center md:grid-cols-2 lg:grid-cols-4">
           {data.map((card, i) => (
-            <div
+            <Link
+              to={"/property/" + path[i]}
               className="flex cursor-pointer flex-col items-center gap-2
             rounded-3xl   py-4 transition-all duration-300 
             hover:scale-105 hover:bg-lightBlue lg:items-start"
@@ -33,7 +36,7 @@ export default function Residencies() {
                 {card.name}
               </p>
               <p className="w-72 text-xs text-gray-300">{card.detail}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
