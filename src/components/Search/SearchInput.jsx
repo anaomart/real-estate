@@ -63,7 +63,7 @@ export default function SearchInput({ className, type }) {
             <Link
               className="my-1 block  border-b-2 p-2"
               key={term?.id}
-              to={`/searchPage/${location},${externalID}`}
+              to={`/search/locationExternalIDs=${location},${externalID}`}
             >
               {term?.name}
             </Link>

@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { BsFilter } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import SearchFilters from "./SearchFilters";
-import Property from "./Property";
-import noResult from "../assets/noresult.svg";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
-import LoadingSpinner from "./LoadingSpinner";
+import noResult from "../../assets/noresult.svg";
+import { baseUrl, fetchApi } from "../../utils/fetchApi";
+import LoadingSpinner from "../LoadingSpinner";
+import Property from "../Property";
 export default function Search() {
   const [searchFilters, setSearchFilters] = useState(false);
   const [properties, setProperties] = useState([]);
@@ -33,8 +33,9 @@ export default function Search() {
       const bathsMin = query.bathsMin || "0";
       const sort = query.sort || "price-desc";
       const areaMax = query.areaMax || "35000";
-      const locationExternalIDs = query.locationExternalIDs || "5002";
+      const locationExternalIDs = query.locationExternalIDs || "5002,6020";
       const categoryExternalID = query.categoryExternalID || "4";
+      console.log(locationExternalIDs);
       const properties = await fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`
       );

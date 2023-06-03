@@ -5,7 +5,7 @@ import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "./Property";
 import ClipLoader from "react-spinners/ClipLoader";
 import LoadingSpinner from "./LoadingSpinner";
-import SearchInput from "./SearchInput";
+import SearchInput from "./Search/SearchInput";
 
 const Banner = ({
   purpose,

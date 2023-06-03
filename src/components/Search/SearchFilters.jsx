@@ -10,8 +10,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { MdCancel } from "react-icons/md";
-import { filterData, getFilterValues } from "../utils/filterData";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
+import { filterData, getFilterValues } from "../../utils/filterData";
+import { baseUrl, fetchApi } from "../../utils/fetchApi";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 export default function SearchFilters({ query }) {

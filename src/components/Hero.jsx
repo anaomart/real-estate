@@ -2,7 +2,7 @@ import React from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import SearchInput from "./SearchInput";
+import SearchInput from "./Search/SearchInput";
 export default function Hero() {
   return (
     <div className="wrapper relative flex flex-col  items-center  justify-around gap-5 text-white  md:flex-row lg:h-[91vh] ">
