@@ -5,12 +5,12 @@ import { FaBed, FaBath } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go";
 import millify from "millify";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
+import { baseUrl, fetchApi } from "../../utils/fetchApi";
 import { useParams } from "react-router-dom";
-import ImageScrollbar from "./ImageScrollBar";
-import LoadingSpinner from "./LoadingSpinner";
+import ImageScrollbar from "../Helpers/ImageScrollBar";
 import { Button } from "@chakra-ui/react";
-import ContactUsForm from "./ContactUsForm";
+import ContactUsForm from "../contact/ContactUsForm";
+import LoadingSpinner from "../Helpers/LoadingSpinner";
 export default function PropertyDetails() {
   const [propertyDetails, setPropertyDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);

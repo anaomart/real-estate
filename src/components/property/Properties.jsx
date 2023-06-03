@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "./Property";
-import ClipLoader from "react-spinners/ClipLoader";
-import LoadingSpinner from "./LoadingSpinner";
-import SearchInput from "./Search/SearchInput";
+import SearchInput from "../Search/SearchInput";
+import { baseUrl, fetchApi } from "../../utils/fetchApi";
+import LoadingSpinner from "../Helpers/LoadingSpinner";
 
 const Banner = ({
   purpose,
@@ -76,7 +75,10 @@ export default function Properties() {
   return (
     <Box className="">
       <div className="flex w-full  justify-center">
-        <SearchInput className="  m-auto my-2 rounded-full border-blue  px-20 py-3 text-center outline-dashed" />
+        <SearchInput
+          rClassName={" translate-x-16 mt-0 rounded-lg    "}
+          className="   my-2   rounded-full border-blue  px-20 py-3  outline-dashed"
+        />
       </div>
 
       <Banner

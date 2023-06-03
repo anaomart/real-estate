@@ -10,9 +10,10 @@ export const baseUrl = 'https://bayut.p.rapidapi.com'
 //     'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
 //   }
 export const fetchApi = async(url) => {
+    console.log(process.env.REACT_APP_api_Key)
     const { data } = await axios.get((url), {
         headers: {
-            'X-RapidAPI-Key': 'd0c8393f24msh4542410fae98502p17a34ejsn459d60cf2906',
+            'X-RapidAPI-Key': process.env.REACT_APP_api_Key,
             'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
         }
     })

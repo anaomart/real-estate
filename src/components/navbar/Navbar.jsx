@@ -3,7 +3,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ContactUsForm from "../ContactUsForm";
+import ContactUsForm from "../contact/ContactUsForm";
 export default function Navbar({ white }) {
   const [openNav, setOpenNav] = React.useState(false);
   const [model, setModel] = useState(false);

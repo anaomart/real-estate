@@ -5,12 +5,12 @@ import "./App.css";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Properties from "./components/Properties";
+import Properties from "./components/property/Properties";
 import { ChakraProvider } from "@chakra-ui/react";
-import Footer from "./components/Footer";
-import PropertyDetails from "./components/PropertyDetails";
-import ContactUsForm from "./components/ContactUsForm";
+import Footer from "./components/MainSections/Footer";
+import ContactUsForm from "./components/contact/ContactUsForm";
 import Search from "./components/Search/Search";
+import PropertyDetails from "./components/property/PropertyDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

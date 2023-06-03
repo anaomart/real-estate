@@ -1,6 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import data from "../assets/slider.json";
+import data from "../../assets/slider.json";
 import { Link } from "react-router-dom";
 export default function Residencies() {
   const path = [6192422, 7416414, 7319302, 7405100];

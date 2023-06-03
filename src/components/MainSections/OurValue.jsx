@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SlideBox from "./SlideBox";
+import SlideBox from "../Helpers/SlideBox";
 import { HiShieldCheck } from "react-icons/hi";
 import { MdAnalytics } from "react-icons/md";
 import { MdCancel } from "react-icons/md";

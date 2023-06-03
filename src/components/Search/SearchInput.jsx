@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function SearchInput({ className, type }) {
+export default function SearchInput({ className, type, rClassName }) {
   const [result, setResult] = React.useState([]);
   const [location, setLocation] = React.useState("[]");
   const [externalID, setExternalID] = React.useState("");
@@ -22,12 +22,12 @@ export default function SearchInput({ className, type }) {
       url: "https://bayut.p.rapidapi.com/auto-complete",
       params: {
         query: term,
-        hitsPerPage: "6",
+        hitsPerPage: "25",
         page: "0",
         lang: "en",
       },
       headers: {
-        "X-RapidAPI-Key": "d0c8393f24msh4542410fae98502p17a34ejsn459d60cf2906",
+        "X-RapidAPI-Key": process.env.REACT_APP_api_Key,
         "X-RapidAPI-Host": "bayut.p.rapidapi.com",
       },
     };
@@ -45,7 +45,7 @@ export default function SearchInput({ className, type }) {
       <input
         onBlur={() => {
           setTimeout(() => {
-            setInputFoucs(false);
+            setInputFoucs(!false);
           }, 300);
         }}
         type={type}
@@ -58,10 +58,15 @@ export default function SearchInput({ className, type }) {
         }}
       />
       {inputFoucs && (
-        <div className="absolute z-50 mx-auto my-3   w-80  bg-white text-black">
+        <div
+          className={
+            `absolute z-50  my-3 h-48 w-80  overflow-y-scroll  bg-white text-black` +
+            rClassName
+          }
+        >
           {result?.map((term) => (
             <Link
-              className="my-1 block  border-b-2 p-2"
+              className="my-1 block  border-b-2  p-2"
               key={term?.id}
               to={`/search/locationExternalIDs=${location},${externalID}`}
             >

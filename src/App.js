@@ -1,14 +1,11 @@
-import Hero from "./components/Hero";
+import Hero from "./components/MainSections/Hero";
 import "./App.css";
-import Brand from "./components/Brand";
-import Residencies from "./components/Residencies";
-import OurValue from "./components/OurValue";
-import ContactUs from "./components/ContactUs";
-import GetStarted from "./components/GetStarted";
-import Footer from "./components/Footer";
-import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "./components/Layout";
-import { useEffect } from "react";
+import Brand from "./components/brand/Brand";
+import Residencies from "./components/MainSections/Residencies";
+import OurValue from "./components/MainSections/OurValue";
+import ContactUs from "./components/contact/ContactUs";
+import GetStarted from "./components/MainSections/GetStarted";
+
 function App() {
   return (
     <>

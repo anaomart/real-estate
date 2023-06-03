@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import SearchFilters from "./SearchFilters";
 import noResult from "../../assets/noresult.svg";
 import { baseUrl, fetchApi } from "../../utils/fetchApi";
-import LoadingSpinner from "../LoadingSpinner";
-import Property from "../Property";
+import Property from "../property/Property";
+import LoadingSpinner from "../Helpers/LoadingSpinner";
 export default function Search() {
   const [searchFilters, setSearchFilters] = useState(false);
   const [properties, setProperties] = useState([]);
