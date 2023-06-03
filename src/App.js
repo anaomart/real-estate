@@ -12,11 +12,11 @@ function App() {
       <div className="App  ">
         <div>
           <div
-            className="
-        pointer-events-none absolute z-30 h-80 w-80 rounded-full bg-[rgba(255,255,255,0.522)] blur-[100px]
-      "
+            className="pointer-events-none absolute
+                          z-30 h-80 w-80 rounded-full
+                          bg-[rgba(255,255,255,0.522)]
+                          blur-[100px]"
           />
-
           <Hero />
         </div>
         <Brand />

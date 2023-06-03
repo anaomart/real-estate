@@ -45,7 +45,7 @@ export default function SearchInput({ className, type, rClassName }) {
       <input
         onBlur={() => {
           setTimeout(() => {
-            setInputFoucs(!false);
+            setInputFoucs(false);
           }, 300);
         }}
         type={type}
@@ -60,13 +60,13 @@ export default function SearchInput({ className, type, rClassName }) {
       {inputFoucs && (
         <div
           className={
-            `absolute z-50  my-3 h-48 w-80  overflow-y-scroll  bg-white text-black` +
+            `absolute z-50 my-3 h-48 w-80 overflow-y-scroll bg-white  text-black   ` +
             rClassName
           }
         >
           {result?.map((term) => (
             <Link
-              className="my-1 block  border-b-2  p-2"
+              className="my-1 block  border-b-2 p-2  hover:bg-gray-200"
               key={term?.id}
               to={`/search/locationExternalIDs=${location},${externalID}`}
             >
