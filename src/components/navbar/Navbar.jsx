@@ -58,7 +58,7 @@ export default function Navbar({ white }) {
             <Link
               className={`z-[1000]  hover:cursor-pointer hover:text-black md:hover:text-white 
             ${
-              white ? "md:text-black md:hover:text-gray-500 " : "md:text-white"
+              white ? "md:text-black md:hover:text-slate-400 " : "md:text-white"
             }`}
               to={nav.path}
               key={nav.title + Math.random()}
@@ -67,12 +67,8 @@ export default function Navbar({ white }) {
             </Link>
           ) : (
             <a
-              className={`z-[1000]  hover:cursor-pointer hover:text-black md:hover:text-white 
-              ${
-                white
-                  ? "md:text-black md:hover:text-gray-500 "
-                  : "md:text-white"
-              }`}
+              className={`z-[1000]  hover:cursor-pointer hover:text-black md:hover:text-slate-400 
+              ${white ? "md:text-black md:hover:text-blue " : "md:text-white"}`}
               href={nav.path}
               key={nav.title + Math.random()}
             >

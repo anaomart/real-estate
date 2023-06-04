@@ -35,7 +35,7 @@ export default function Hero() {
             className={
               " w-44 border-none p-2 text-base  outline-none  sm:w-[100%] lg:px-8"
             }
-            rClassName={"ml-6 "}
+            rClassName={"md:ml-6 "}
           />
           <button className="button">Search</button>
         </div>
