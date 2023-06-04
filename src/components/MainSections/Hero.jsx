@@ -3,10 +3,14 @@ import { HiLocationMarker } from "react-icons/hi";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import SearchInput from "../Search/SearchInput";
+import Map from "../Helpers/Map";
 export default function Hero() {
   return (
     <div className="wrapper relative flex flex-col  items-center  justify-around gap-5 text-white  md:flex-row lg:h-[91vh] ">
       {/* Left */}
+      <div>
+        <Map />
+      </div>
       <div className=" flex  flex-col items-center justify-center  gap-8 md:gap-12 ">
         {/* text */}
         <div className="relative z-10">

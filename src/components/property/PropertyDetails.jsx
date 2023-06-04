@@ -11,6 +11,7 @@ import ImageScrollbar from "../Helpers/ImageScrollBar";
 import { Button } from "@chakra-ui/react";
 import ContactUsForm from "../contact/ContactUsForm";
 import LoadingSpinner from "../Helpers/LoadingSpinner";
+import Map from "../Helpers/Map";
 export default function PropertyDetails() {
   const [propertyDetails, setPropertyDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -88,12 +89,23 @@ export default function PropertyDetails() {
             </Flex>
           </Box>
           <Box marginTop="2">
-            <Text fontSize="lg" marginBottom="2" fontWeight="bold">
+            <Text
+              fontSize="lg"
+              marginBottom="2"
+              fontWeight="bold"
+              className="w-[80%]"
+            >
               {propertyDetails?.title}
             </Text>
             <Text lineHeight="2" color="gray.600">
               {propertyDetails?.description}
             </Text>
+            <div className="h-[350px] w-full">
+              <Map
+                lat={propertyDetails.geography.lat}
+                lng={propertyDetails.geography.lng}
+              />
+            </div>
           </Box>
           <Flex
             flexWrap="wrap"
