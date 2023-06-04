@@ -77,7 +77,7 @@ export default function Properties() {
       <div className="flex w-full  justify-center">
         <SearchInput
           rClassName={" translate-x-16 mt-0 rounded-lg    "}
-          className="   my-2   rounded-full border-blue  px-20 py-3  outline-dashed"
+          className="   my-2   rounded-full border-blue px-10  py-3 outline-dashed  md:px-20"
         />
       </div>
 

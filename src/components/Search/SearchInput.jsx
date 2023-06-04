@@ -60,7 +60,7 @@ export default function SearchInput({ className, type, rClassName }) {
       {inputFoucs && (
         <div
           className={
-            `absolute z-50 my-3 h-48 w-72 overflow-y-scroll  bg-white text-black  md:w-80   ` +
+            `absolute z-50 my-3 h-48 w-80  overflow-y-scroll bg-white  text-black   ` +
             rClassName
           }
         >
