@@ -57,7 +57,7 @@ export default function SearchInput({ className, type, rClassName }) {
           else setInputFoucs(false);
         }}
       />
-      {inputFoucs && (
+      {inputFoucs && result && (
         <div
           className={
             `absolute z-50 my-3 h-48 w-80  overflow-y-scroll bg-white  text-black   ` +
